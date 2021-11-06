@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineImpedance", "LineImpedance\LineImpedance.csproj", "{A0436898-F8E7-4876-A8BC-48A455FC1DBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineImpedance", "LineImpedance\LineImpedance.csproj", "{A0436898-F8E7-4876-A8BC-48A455FC1DBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{00857935-5D3D-4E5C-99A7-ABA1A7BBAD25}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{2C453356-A6EA-4C31-85AE-27005E0851F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineImpedance.Tests", "LineImpedance.Tests\LineImpedance.Tests.csproj", "{094B0F00-A11D-41FB-AFDB-B016BFEF21C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineImpedance.Tests", "LineImpedance.Tests\LineImpedance.Tests.csproj", "{094B0F00-A11D-41FB-AFDB-B016BFEF21C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineImpedance.WPF", "LineImpedance.WPF\LineImpedance.WPF.csproj", "{6C77D363-6462-4A4D-B250-7C6FC0B9C335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,12 +27,17 @@ Global
 		{094B0F00-A11D-41FB-AFDB-B016BFEF21C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{094B0F00-A11D-41FB-AFDB-B016BFEF21C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{094B0F00-A11D-41FB-AFDB-B016BFEF21C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C77D363-6462-4A4D-B250-7C6FC0B9C335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C77D363-6462-4A4D-B250-7C6FC0B9C335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C77D363-6462-4A4D-B250-7C6FC0B9C335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C77D363-6462-4A4D-B250-7C6FC0B9C335}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{094B0F00-A11D-41FB-AFDB-B016BFEF21C2} = {00857935-5D3D-4E5C-99A7-ABA1A7BBAD25}
+		{6C77D363-6462-4A4D-B250-7C6FC0B9C335} = {2C453356-A6EA-4C31-85AE-27005E0851F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B5FF0CC5-1F49-420C-B50B-8E1589D0905F}
