@@ -40,6 +40,9 @@ namespace LineImpedance.Extensions
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Pow2(this double x) => x * x;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Pow3(this double x) => x * x * x;
+
         public static double Pow(this double x, double k) =>
             x is double.NaN || k is double.NaN
                 ? double.NaN
