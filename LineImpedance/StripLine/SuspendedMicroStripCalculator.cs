@@ -6,6 +6,10 @@
         public double Height0 { get; set; }
         public double Width { get; set; }
 
-        public override void Calculate() => Impedance = LineImpedance.Impedance.SuspendedMicroStrip(Height, Height0, Width, Eps);
+        public bool Inverted { get; set; }
+
+        public override void Calculate() => Impedance = Inverted
+            ? LineImpedance.Impedance.SuspendedMicroStripInverted(Height, Height0, Width, Eps)
+            : LineImpedance.Impedance.SuspendedMicroStrip(Height, Height0, Width, Eps);
     }
 }
