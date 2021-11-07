@@ -6,6 +6,7 @@ using static System.Math;
 
 namespace LineImpedance
 {
+    /// <summary>Сопротивление линии</summary>
     public static class Impedance
     {
         private static double Sech(double x) => 2 / (Exp(x) + Exp(-x));
@@ -128,6 +129,40 @@ namespace LineImpedance
             var eps0885 = 0.0885 * Eps;
             var cfprime = eps0885 / PI * (p1 - p2);
             return 94.15 / (Sqrt(Eps) * (W / H * th_inv + cfprime / eps0885));
+        }
+
+        public static double AsymmetricThickStrip(double H1, double H2, double W, double T, double Eps)
+        {
+            if (W / H1 < 0.1 || W / H1 > 2)
+                throw new InvalidOperationException("0.1 <= W/H1 <= 2")
+                {
+                    Data =
+                    {
+                        { "H1", H1 },
+                        { "H2", H2 },
+                        { "W", W },
+                        { "T", T },
+                        { "Eps", Eps }
+                    }
+                };
+
+            if (T / H1 >= 0.25)
+                throw new InvalidOperationException("T / H1 >= 0.25")
+                {
+                    Data =
+                    {
+                        { "H1", H1 },
+                        { "H2", H2 },
+                        { "W", W },
+                        { "T", T },
+                        { "Eps", Eps }
+                    }
+                };
+
+            var imp1 = ThickStrip(2 * H1 + T, W, T, Eps);
+            var imp2 = ThickStrip(2 * H2 + T, W, T, Eps);
+
+            return 2 * imp1 * imp2 / (imp1 + imp2);
         }
     }
 }
