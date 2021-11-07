@@ -331,5 +331,23 @@ namespace LineImpedance
             return Z0 / sqrteps;
         }
 
+        public static double ThickCoplanar(double H, double W, double T, double G, double Eps)
+        {
+            var a = W;
+            var b = W + 2 * G;
+            var k = a / b;
+            var k_prime = Sqrt(1 - k*k);
+            var a_t = a + 1.25 * T / PI * (1 + Log(4 * PI * a / T));
+            var b_t = b - 1.25 * T / PI * (1 + Log(4 * PI * a / T));
+            var k_t = a_t / b_t;
+            var k_t_prime = Sqrt(1 - k_t* k_t);
+            var k1 = Sinh(PI * a_t / (4 * H)) / Sinh(PI * b_t / (4 * H));
+            var k1_prime = Sqrt(1 - k1* k1);
+            var epsf_eff = 1 + (Eps - 1) / 2 * (Kint(k_prime) * Kint(k1) / (Kint(k) * Kint(k1_prime)));
+
+            var epsf_eff_t = epsf_eff - (epsf_eff - 1) / ((b - a) * Kint(k) / (0.7 * T * 2 * Kint(k_prime)) + 1);
+            //var eps_eff = epsf_eff;
+            return 30 * PI / Sqrt(epsf_eff_t) * Kint(k_t_prime) / Kint(k_t);
+        }
     }
 }
