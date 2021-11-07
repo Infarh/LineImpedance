@@ -16,8 +16,8 @@ namespace LineImpedance.Tests.StripLine
         {
             const double h1 = 1;
             const double h2 = 4;
-            const double t = 0.1;
             const double w = 2;
+            const double t = 0.1;
             const double eps = 2;
 
             const double expected_impedance = 60.01;
@@ -44,8 +44,8 @@ namespace LineImpedance.Tests.StripLine
         {
             const double h1 = 22;
             const double h2 = 4;
-            const double t = 0.1;
             const double w = 2;
+            const double t = 0.1;
             const double eps = 2;
 
             var calculator = new AsymmetricThickStripCalculator
@@ -67,8 +67,8 @@ namespace LineImpedance.Tests.StripLine
         {
             const double h1 = 2;
             const double h2 = 4;
-            const double t = 0.1;
             const double w = 5;
+            const double t = 0.1;
             const double eps = 2;
 
             var calculator = new AsymmetricThickStripCalculator
@@ -90,8 +90,8 @@ namespace LineImpedance.Tests.StripLine
         {
             const double h1 = 1;
             const double h2 = 4;
-            const double t = 3;
             const double w = 2;
+            const double t = 3;
             const double eps = 2;
 
             var calculator = new AsymmetricThickStripCalculator

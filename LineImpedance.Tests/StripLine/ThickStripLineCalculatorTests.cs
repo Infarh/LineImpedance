@@ -62,9 +62,9 @@ namespace LineImpedance.Tests.StripLine
         [TestMethod]
         public void T_less_0_25_H_is_Invalid_parameters()
         {
-            const double t = 0.5;
             const double h = 1;
             const double w = 1;
+            const double t = 0.5;
             const double eps = 2;
 
             var calculator = new ThickStripCalculator
@@ -77,9 +77,9 @@ namespace LineImpedance.Tests.StripLine
 
             var exception = Assert.ThrowsException<InvalidOperationException>(calculator.Calculate);
 
-            Assert.That.Value(exception.Data["T"]).IsEqual(t);
             Assert.That.Value(exception.Data["H"]).IsEqual(h);
             Assert.That.Value(exception.Data["W"]).IsEqual(h);
+            Assert.That.Value(exception.Data["T"]).IsEqual(t);
             Assert.That.Value(exception.Data["Eps"]).IsEqual(eps);
         }
     }

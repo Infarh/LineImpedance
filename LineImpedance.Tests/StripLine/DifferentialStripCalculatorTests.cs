@@ -10,8 +10,8 @@ namespace LineImpedance.Tests.StripLine
         public void Calculate_DtoT_greater_5()
         {
             const double h = 2;
-            const double t = 0.1;
             const double w = 4;
+            const double t = 0.1;
             const double d = 1;
             const double eps = 2;
 
@@ -20,8 +20,8 @@ namespace LineImpedance.Tests.StripLine
             var calculator = new DifferentialStripCalculator
             {
                 Height = h,
-                Thickness = t,
                 Width = w,
+                Thickness = t,
                 Delta = d,
                 Eps = eps,
             };
@@ -38,8 +38,8 @@ namespace LineImpedance.Tests.StripLine
         public void Calculate_DtoT_less_5()
         {
             const double h = 2;
-            const double t = 0.5;
             const double w = 4;
+            const double t = 0.5;
             const double d = 2.4;
             const double eps = 2;
 
@@ -48,8 +48,8 @@ namespace LineImpedance.Tests.StripLine
             var calculator = new DifferentialStripCalculator
             {
                 Height = h,
-                Thickness = t,
                 Width = w,
+                Thickness = t,
                 Delta = d,
                 Eps = eps,
             };

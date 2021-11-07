@@ -190,7 +190,8 @@ namespace LineImpedance
             const double c0885pi = 0.0885 / PI;
             var c0885_pi_eps = c0885pi * Eps;
             var cf_T = c0885_pi_eps * (2 * aaa * Log(aaa + 1) - (aaa - 1) * Log(aaa.Pow2() - 1));
-            var cf = c0885_pi_eps * 2 * Log(2);
+            const double log2 = 0.69314718055994529;
+            var cf = c0885_pi_eps * 2 * log2;
 
             //var m = 6 / (3 + 2 * T / (H - T));
             //var dw1 = 1 / (2 * (H - T) / T + 1);
@@ -210,7 +211,7 @@ namespace LineImpedance
             // calculate zero-thickness odd impedance of edge-coupled stripline
             var ko = Tanh(PI * W / (2 * H)) * Coth(PI * (W + D) / (2 * H));
             var ko_prime = Sqrt(1 - ko.Pow2());
-            var Zo = 30 * PI / Sqrt(Eps) * Kint(ko_prime) / Kint(ko); //Im missing a factor of To somewere. Just added it here
+            var Zo = 30 * PI / Sqrt(Eps) * Kint(ko_prime) / Kint(ko); // Im missing a factor of To somewere. Just added it here
 
             // calculate zero-thickness even impedance of edge-coupled stripline
             //var ke = Tanh(Pi * W / (2 * H)) * Tanh(Pi * (W + D) / (2 * H));

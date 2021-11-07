@@ -9,8 +9,8 @@ namespace LineImpedance.Tests.MicroStrip
         [TestMethod]
         public void W_less_2_pi_H_and_less_H()
         {
-            const double w = 4;
             const double h = 5;
+            const double w = 4;
             const double t = 0;
             const double eps = 2;
 
@@ -18,8 +18,8 @@ namespace LineImpedance.Tests.MicroStrip
 
             var calculator = new ThinMicroStripCalculator
             {
-                Width = w,
                 Height = h,
+                Width = w,
                 Thickness = t,
                 Eps = eps,
             };
@@ -35,8 +35,8 @@ namespace LineImpedance.Tests.MicroStrip
         [TestMethod]
         public void W_between_H_and_2_Pi_H()
         {
-            const double w = 10;
             const double h = 5;
+            const double w = 10;
             const double t = 0;
             const double eps = 2;
 
@@ -44,8 +44,8 @@ namespace LineImpedance.Tests.MicroStrip
 
             var calculator = new ThinMicroStripCalculator
             {
-                Width = w,
                 Height = h,
+                Width = w,
                 Thickness = t,
                 Eps = eps,
             };
@@ -61,8 +61,8 @@ namespace LineImpedance.Tests.MicroStrip
         [TestMethod]
         public void W_greater_H()
         {
-            const double w = 20;
             const double h = 5;
+            const double w = 20;
             const double t = 0;
             const double eps = 2;
 
@@ -70,8 +70,8 @@ namespace LineImpedance.Tests.MicroStrip
 
             var calculator = new ThinMicroStripCalculator
             {
-                Width = w,
                 Height = h,
+                Width = w,
                 Thickness = t,
                 Eps = eps,
             };
