@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace LineImpedance.Extensions
 {
     internal static class DoubleExt
     {
-        public static double Sqr(this double x) => x * x;
-
         public static double Sqrt(this double x) => x is double.NaN ? double.NaN : Math.Sqrt(x);
 
         public static double Pow(this double x, int n)
@@ -38,6 +37,7 @@ namespace LineImpedance.Extensions
                 }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Pow2(this double x) => x * x;
 
         public static double Pow(this double x, double k) =>
