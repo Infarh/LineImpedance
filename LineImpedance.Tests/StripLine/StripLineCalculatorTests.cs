@@ -15,7 +15,7 @@ namespace LineImpedance.Tests.StripLine
 
             const double expected_impedance = 51.63;
 
-            var calculator = new StripLineCalculator
+            var calculator = new StripCalculator
             {
                 Height = h,
                 Width = w,

@@ -17,7 +17,7 @@ namespace LineImpedance.Tests.StripLine
 
             const double expected_impedance = 50.26;
 
-            var calculator = new ThickStripLineCalculator
+            var calculator = new ThickStripCalculator
             {
                 Height = h,
                 Width = w,
@@ -43,7 +43,7 @@ namespace LineImpedance.Tests.StripLine
 
             const double expected_impedance = 78.86;
 
-            var calculator = new ThickStripLineCalculator
+            var calculator = new ThickStripCalculator
             {
                 Height = h,
                 Width = w,
@@ -67,7 +67,7 @@ namespace LineImpedance.Tests.StripLine
             const double w = 1;
             const double eps = 2;
 
-            var calculator = new ThickStripLineCalculator
+            var calculator = new ThickStripCalculator
             {
                 Height = h,
                 Width = w,
