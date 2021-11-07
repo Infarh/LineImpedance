@@ -260,6 +260,7 @@ namespace LineImpedance
             var d31 = (1956.3170 + 779.9975 * f - 995.9494 * f_2 + 183.1957 * f_3) * 1e-6;
             var d32 = (62.855 - 3462.5 * f + 2909.923 * f_2 - 614.7068 * f_3) * 1e-8;
             var d33 = (-35.2531 + 601.0291 * f - 643.0814 * f_2 + 161.2689 * f_3) * 1e-9;
+
             var f1 = 1 - Sqrt(1 / Eps);
             var h0h = H0 / H;
             var h0h2 = h0h * h0h;
@@ -268,9 +269,11 @@ namespace LineImpedance
             var c1 = d10 + d11 * h0h + d12 * h0h2 + d13 * h0h3;
             var c2 = d20 + d21 * h0h + d22 * h0h2 + d23 * h0h3;
             var c3 = d30 + d31 * h0h + d32 * h0h2 + d33 * h0h3;
+
             var wh0 = W / H0;
             var wh02 = wh0 * wh0;
             var wh03 = wh02 * wh0;
+
             var f2 = 1 / (c0 + c1 * wh0 + c2 * wh02 + c3 * wh03);
             var sqrt_eps = 1 / (1 - f1 * f2);
             var u = wh0 / (1 + H / H0);
