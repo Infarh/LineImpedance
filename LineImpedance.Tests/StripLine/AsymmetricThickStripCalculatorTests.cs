@@ -59,7 +59,7 @@ namespace LineImpedance.Tests.StripLine
 
             var exception = Assert.ThrowsException<InvalidOperationException>(calculator.Calculate);
 
-            Assert.That.Value(exception.Message).IsEqual("0.1 <= W/H1 <= 2");
+            Assert.That.Value(exception.Message).IsEqual("!(0.1 <= W/H1 <= 2)");
         }
 
         [TestMethod] 
@@ -82,7 +82,7 @@ namespace LineImpedance.Tests.StripLine
 
             var exception = Assert.ThrowsException<InvalidOperationException>(calculator.Calculate);
 
-            Assert.That.Value(exception.Message).IsEqual("0.1 <= W/H1 <= 2");
+            Assert.That.Value(exception.Message).IsEqual("!(0.1 <= W/H1 <= 2)");
         }
 
         [TestMethod]
@@ -105,7 +105,7 @@ namespace LineImpedance.Tests.StripLine
 
             var exception = Assert.ThrowsException<InvalidOperationException>(calculator.Calculate);
 
-            Assert.That.Value(exception.Message).IsEqual("T / H1 >= 0.25");
+            Assert.That.Value(exception.Message).IsEqual("T / H1 < 0.25");
         }
     }
 }
