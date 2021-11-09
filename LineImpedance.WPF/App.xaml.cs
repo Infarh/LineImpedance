@@ -1,4 +1,6 @@
-﻿namespace LineImpedance.WPF
+﻿global using System;
+
+namespace LineImpedance.WPF
 {
     public partial class App
     {

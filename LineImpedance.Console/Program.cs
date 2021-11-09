@@ -1,12 +1,8 @@
-﻿using System;
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+using System.Runtime.CompilerServices;
+//global using static System.Math;
 
-namespace LineImpedance.ConsoleUI
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            
-        }
-    }
-}
+
+Console.WriteLine("123");
