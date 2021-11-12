@@ -1,0 +1,16 @@
+﻿@page "/calculator/{CalculatorName}"
+
+<div class="row">
+    <div class="col-md-3">
+        <CalculatorsMenu/>
+    </div>
+    <div class="col-md-9">
+        <h3>@CalculatorName</h3>
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public string CalculatorName { get; set; }
+}

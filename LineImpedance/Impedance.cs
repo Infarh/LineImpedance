@@ -1,9 +1,8 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿global using System;
+global using LineImpedance.Extensions;
+global using System.ComponentModel;
 
-using LineImpedance.Extensions;
-
-using static System.Math;
+global using static System.Math;
 
 namespace LineImpedance
 {

@@ -1,6 +1,4 @@
-﻿using static System.Math;
-
-namespace LineImpedance
+﻿namespace LineImpedance
 {
     /// <summary>Вычислитель</summary>
     public abstract class Calculator
@@ -26,9 +24,11 @@ namespace LineImpedance
         }
 
         /// <summary>Диэлектрическая проницаемость диэлектрика</summary>
+        [Description("Диэлектрическая проницаемость")]
         public double Eps { get; set; }
 
         /// <summary>Сопротивление линии</summary>
+        [Description("Сопротивление")]
         public double Impedance { get; set; }
 
         /// <summary>Рассчитать</summary>

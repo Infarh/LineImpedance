@@ -1,0 +1,50 @@
+﻿@using System.ComponentModel
+@typeparam TItem
+@implements IDisposable
+
+@if (_Model is { } model)
+{
+    if (Template is { } template)
+    {
+        @template(model)
+    }
+    else
+    {
+        @ChildContent
+    }
+}
+
+@code
+{
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    public RenderFragment<TItem>? Template { get; set; }
+
+    private TItem? _Model;
+
+    [Parameter]
+    public TItem? Model
+    {
+        get => _Model;
+        set
+        {
+            if (ReferenceEquals(value, _Model)) return;
+            Unsubscribe(_Model as INotifyPropertyChanged);
+            _Model = value;
+            if (value is INotifyPropertyChanged model)
+                model.PropertyChanged += OnModelChanged;
+        }
+    }
+
+
+    private void Unsubscribe(INotifyPropertyChanged? model)
+    {
+        if (model is null) return;
+        model.PropertyChanged -= OnModelChanged;
+    }
+
+    private void OnModelChanged(object? Sender, PropertyChangedEventArgs E) => StateHasChanged();
+
+    public void Dispose() => Unsubscribe(_Model as INotifyPropertyChanged);
+}

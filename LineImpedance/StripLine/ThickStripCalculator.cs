@@ -1,13 +1,11 @@
-﻿using System;
-
-using LineImpedance.Extensions;
-
-using static System.Math;
-
-namespace LineImpedance.StripLine
+﻿namespace LineImpedance.StripLine
 {
+    /// <summary>Симметричная полосковая линия с толстым полоском</summary>
+    [Description("Симметричная полосковая линия с толстым полоском")]
     public class ThickStripCalculator : StripCalculator
     {
+        /// <summary>Толщина полоска</summary>
+        [Description("Толщина полоска")]
         public double Thickness { get; set; }
 
         public override void Calculate()

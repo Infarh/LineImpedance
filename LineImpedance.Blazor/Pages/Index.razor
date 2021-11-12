@@ -1,7 +1,23 @@
 ﻿@page "/"
+@inject MainViewModel Model
 
-<PageTitle>Index</PageTitle>
+<PageTitle>
+    tre
+</PageTitle>
 
 <h1>Hello, world!</h1>
 
+<Binding Model="@Model">
+    <span>@Model.Time</span>
+</Binding>
+
+<br/>
+
 Welcome to your new app.
+<hr/>
+123-
+
+@code
+{
+    
+}

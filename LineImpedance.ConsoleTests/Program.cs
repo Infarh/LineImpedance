@@ -1,12 +1,15 @@
 ﻿using System;
+using LineImpedance;
+using LineImpedance.Coaxial;
+using LineImpedance.Extensions;
 
-namespace LineImpedance.ConsoleTests
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+var calculator = new CoaxialCalculator();
 
-        }
-    }
-}
+var type = typeof(Impedance);
+
+var d1 = type.GetMethod("Coaxial");
+
+var summary = d1.GetXmlSummary();
+
+Console.ReadLine();
+
