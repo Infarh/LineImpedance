@@ -86,13 +86,53 @@
         <member name="P:LineImpedance.StripLine.AsymmetricThickStripCalculator.Thickness">
             <summary>Толщина полоска</summary>
         </member>
-        <member name="F:LineImpedance.StripLine.CoplanarCalculator.TestField">
-            <summary>
-            Тестовое поле
-            </summary>
+        <member name="T:LineImpedance.StripLine.CoplanarCalculator">
+            <summary>Щелевая полосковая линия</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.CoplanarCalculator.Height">
+            <summary>Высота подложки</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.CoplanarCalculator.Width">
+            <summary>Ширина полоска</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.CoplanarCalculator.Thickness">
+            <summary>Толщина полоска</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.CoplanarCalculator.Gap">
+            <summary>Зазор между полосками</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.CoplanarCalculator.Ground">
+            <summary>Заземление</summary>
         </member>
         <member name="T:LineImpedance.StripLine.StripCalculator">
             <summary>Симметричная полосковая линия</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.StripCalculator.Height">
+            <summary>Высота подложки</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.StripCalculator.Width">
+            <summary>Ширина полоска</summary>
+        </member>
+        <member name="T:LineImpedance.StripLine.SuspendedMicroStripCalculator">
+            <summary>Полосковая линия с воздушной прослойкой</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.SuspendedMicroStripCalculator.Height">
+            <summary>Высота подложки</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.SuspendedMicroStripCalculator.Height0">
+            <summary>Высота воздушной прослойки</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.SuspendedMicroStripCalculator.Width">
+            <summary>Ширина полоска</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.SuspendedMicroStripCalculator.Inverted">
+            <summary>Полосок между экраном и подложкой</summary>
+        </member>
+        <member name="T:LineImpedance.StripLine.ThickStripCalculator">
+            <summary>Симметричная полосковая линия с толстым полоском</summary>
+        </member>
+        <member name="P:LineImpedance.StripLine.ThickStripCalculator.Thickness">
+            <summary>Толщина полоска</summary>
         </member>
         <member name="T:System.Index">
             <summary>Represent a type can be used to index a collection either from the start or the end.</summary>

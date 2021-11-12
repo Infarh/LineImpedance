@@ -1,0 +1,18 @@
+﻿<h3>@Calculator.Name</h3>
+
+@foreach (var property in Calculator.Properties)
+{
+    <label>@property.Name</label>
+    <input @bind="@property.Value"/>
+    <br/>
+}
+
+<button @onclick="OnCalculateClick">Рассчитать</button>
+
+@code
+{
+    [Parameter]
+    public CalculatorViewModel Calculator { get; set; }
+
+    private void OnCalculateClick() { Calculator.Calculate(); }
+}

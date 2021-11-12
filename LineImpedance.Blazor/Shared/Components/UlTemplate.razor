@@ -1,17 +1,32 @@
 ﻿@typeparam TItem
 
-<ul>
-    @foreach (var item in Items)
+@if (Items is { } items)
+{
+    if (ItemTemplate is { } template)
     {
-        <li>@ItemTemplate(item)</li>
+        <ul>
+            @foreach (var item in items)
+            {
+                <li>@template(item)</li>
+            }
+        </ul>
     }
-</ul>
+    else
+    {
+        <ul>
+            @foreach (var item in items)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    }
+}
 
 @code {
 
     [Parameter]
-    public RenderFragment<TItem> ItemTemplate { get; set; }
+    public RenderFragment<TItem>? ItemTemplate { get; set; }
 
     [Parameter]
-    public IReadOnlyList<TItem> Items { get; set; }
+    public IEnumerable<TItem>? Items { get; set; }
 }

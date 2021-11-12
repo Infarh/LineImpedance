@@ -31,6 +31,8 @@ namespace LineImpedance.Extensions
             return (string)result;
         }
 
+        public static string? GetDescription(this Type type) => type.GetCustomAttribute<DescriptionAttribute>()?.Description;
+
         public static string? GetXmlSummary(this MemberInfo Member)
         {
             var type = Member.DeclaringType;
@@ -68,6 +70,8 @@ namespace LineImpedance.Extensions
 
             return (string)result;
         }
+
+        public static string? GetDescription(this MemberInfo member) => member.GetCustomAttribute<DescriptionAttribute>()?.Description;
 
         private static string GetString(this MemberTypes type) => type switch
         {

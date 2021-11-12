@@ -1,11 +1,16 @@
-﻿@page "/calculator/{CalculatorName}"
+﻿@page "/calculator"
+@page "/calculator/{CalculatorName}"
+@inject MainViewModel Model
 
 <div class="row">
     <div class="col-md-3">
         <CalculatorsMenu/>
     </div>
     <div class="col-md-9">
-        <h3>@CalculatorName</h3>
+        @if (CalculatorModel is { } model)
+        {
+            <CalculatorView Calculator="model"/>
+        }
     </div>
 </div>
 
@@ -13,4 +18,8 @@
 {
     [Parameter]
     public string CalculatorName { get; set; }
+
+    private CalculatorViewModel? _CalculatorModel;
+
+    public CalculatorViewModel? CalculatorModel => _CalculatorModel ??= Model.GetCalculatorByTypeName(CalculatorName is { Length: > 0 } name ? name : "Coaxial");
 }

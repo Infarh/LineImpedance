@@ -1,23 +1,14 @@
 ﻿@page "/"
 @inject MainViewModel Model
 
-<PageTitle>
-    tre
-</PageTitle>
+<PageTitle>Калькулятор сопротивлений линий передачи</PageTitle>
 
-<h1>Hello, world!</h1>
-
-<Binding Model="@Model">
-    <span>@Model.Time</span>
-</Binding>
+<h3>Линии передачи</h3>
 
 <br/>
 
-Welcome to your new app.
-<hr/>
-123-
-
-@code
-{
-    
-}
+<UlTemplate Items="Model.Calculators">
+    <ItemTemplate>
+        <NavLink href="@($"/calculator/{context.TypeName}")">@context.Name</NavLink>
+    </ItemTemplate>
+</UlTemplate>

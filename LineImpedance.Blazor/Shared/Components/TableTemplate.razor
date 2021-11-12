@@ -1,24 +1,44 @@
 ﻿@typeparam TItem
 
-<table class="table">
-    <thead>
-        <tr>@TableHeader</tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Items)
-        {
-            <tr>@RowTemplate(item)</tr>
-        }
-    </tbody>
-</table>
+@if (Items is { } items)
+{
+    if (RowTemplate is { } row)
+    {
+        <table class="table">
+            <thead>
+            <tr>@TableHeader</tr>
+            </thead>
+            <tbody>
+            @foreach (var item in items)
+            {
+                <tr>@row(item)</tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+            <tr>@TableHeader</tr>
+            </thead>
+            <tbody>
+            @foreach (var item in items)
+            {
+                <tr>item</tr>
+            }
+            </tbody>
+        </table>
+    }
+}
 
 @code {
     [Parameter]
-    public RenderFragment TableHeader { get; set; }
+    public RenderFragment? TableHeader { get; set; }
 
     [Parameter]
-    public RenderFragment<TItem> RowTemplate { get; set; }
+    public RenderFragment<TItem>? RowTemplate { get; set; }
 
     [Parameter]
-    public IReadOnlyList<TItem> Items { get; set; }
+    public IEnumerable<TItem>? Items { get; set; }
 }
