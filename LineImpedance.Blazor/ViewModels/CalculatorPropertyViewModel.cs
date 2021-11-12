@@ -13,6 +13,8 @@ public class CalculatorPropertyViewModel : ViewModel
 
     public string Name => _Property.Name;
 
+    public string Description => _Description;
+
     public double Value { get => _Getter(); set => _Setter(value); }
 
     public CalculatorPropertyViewModel(PropertyInfo Property, Calculator Calculator, string Description)

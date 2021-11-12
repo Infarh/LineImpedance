@@ -1,1 +1,9 @@
-﻿<p>Калькуляторы</p>
+﻿@inject MainViewModel Model
+
+<p>Калькуляторы</p>
+
+<UlTemplate Items="@Model.Calculators">
+    <ItemTemplate>
+        <NavLink href="@($"/calculator/{context.TypeName}")">@context.Name</NavLink>
+    </ItemTemplate>
+</UlTemplate>

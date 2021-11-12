@@ -4,35 +4,42 @@
 {
     if (RowTemplate is { } row)
     {
-        <table class="table">
+        <table @attributes=@TableAttributes>
             <thead>
-            <tr>@TableHeader</tr>
+                <tr>@TableHeader</tr>
             </thead>
             <tbody>
-            @foreach (var item in items)
-            {
-                <tr>@row(item)</tr>
-            }
+                @foreach (var item in items)
+                {
+                    <tr>@row(item)</tr>
+                }
             </tbody>
         </table>
     }
     else
     {
-        <table class="table">
+        <table @attributes=@TableAttributes>
             <thead>
-            <tr>@TableHeader</tr>
+                <tr>@TableHeader</tr>
             </thead>
             <tbody>
-            @foreach (var item in items)
-            {
-                <tr>item</tr>
-            }
+                @foreach (var item in items)
+                {
+                    <tr>item</tr>
+                }
             </tbody>
         </table>
     }
 }
 
 @code {
+    [Parameter]
+    public Dictionary<string, object> TableAttributes { get; set; } = 
+        new(StringComparer.OrdinalIgnoreCase)
+        {
+            { "class", "table" }
+        };
+
     [Parameter]
     public RenderFragment? TableHeader { get; set; }
 

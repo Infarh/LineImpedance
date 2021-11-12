@@ -1,0 +1,42 @@
+﻿@typeparam TItem
+
+<table @attributes=@TableAttributes>
+    <thead>
+        <tr>
+            @Header
+        </tr>
+    </thead>
+    @if (Items is { } items)
+    {
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr @onclick="async () => await RowClick.InvokeAsync(item)">
+                    @RowTemplate(item)
+                </tr>
+            }
+        </tbody>
+    }
+</table>
+
+@code
+{
+    [Parameter]
+    public Dictionary<string, object> TableAttributes { get; set; } =
+            new(StringComparer.OrdinalIgnoreCase)
+            {
+                { "class", "table" }
+            };
+
+    [Parameter]
+    public RenderFragment Header { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem> RowTemplate { get; set; }
+
+    [Parameter]
+    public IEnumerable<TItem>? Items { get; set; }
+
+    [Parameter]
+    public EventCallback<TItem> RowClick { get; set; }
+}

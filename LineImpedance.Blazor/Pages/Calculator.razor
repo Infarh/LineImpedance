@@ -2,6 +2,8 @@
 @page "/calculator/{CalculatorName}"
 @inject MainViewModel Model
 
+<h3>@CalculatorName</h3>
+
 <div class="row">
     <div class="col-md-3">
         <CalculatorsMenu/>
@@ -19,7 +21,5 @@
     [Parameter]
     public string CalculatorName { get; set; }
 
-    private CalculatorViewModel? _CalculatorModel;
-
-    public CalculatorViewModel? CalculatorModel => _CalculatorModel ??= Model.GetCalculatorByTypeName(CalculatorName is { Length: > 0 } name ? name : "Coaxial");
+    public CalculatorViewModel? CalculatorModel => Model.GetCalculatorByTypeName(CalculatorName is { Length: > 0 } name ? name : "Coaxial");
 }

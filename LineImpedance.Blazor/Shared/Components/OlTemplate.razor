@@ -4,21 +4,21 @@
 {
     if (ItemTemplate is { } template)
     {
-        <ul @attributes=@ListAttributes>
+        <ol @attributes=@ListAttributes>
             @foreach (var item in items)
             {
                 <li>@template(item)</li>
             }
-        </ul>
+        </ol>
     }
     else
     {
-        <ul @attributes=@ListAttributes>
+        <ol @attributes=@ListAttributes>
             @foreach (var item in items)
             {
                 <li>@item</li>
             }
-        </ul>
+        </ol>
     }
 }
 
