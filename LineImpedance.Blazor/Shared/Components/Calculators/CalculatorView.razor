@@ -1,17 +1,15 @@
 ﻿<h3>@Calculator.Name</h3>
 
-@foreach (var property in Calculator.Properties)
-{
-    <div class="row">
-        <div class="col-5">
-            <label for="@property.Name" class="form-label">@property.Name - @property.Description</label>
-            <input class="form-control" type="number" id="@property.Name" @bind-value="@property.Value"/>
-            <div class="invalid-feedback"></div>
-        </div>
-    </div>
-}
+<DL Items="@Calculator.Properties" class="row">
+    <DT>
+        <label for="@context.Name" class="form-label">@context.Name - @context.Description</label>
+    </DT>
+    <DD>
+        <input class="form-control" type="number" id="@context.Name" @bind-value="@context.Value"/>
+    </DD>
+</DL>
 
-<button @onclick="OnCalculateClick">Рассчитать</button>
+<button @onclick="OnCalculateClick" class="btn btn-primary">Рассчитать</button>
 
 @code
 {

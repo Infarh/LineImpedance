@@ -2,33 +2,33 @@
 
 @if (Items is { } items)
 {
-    if (ItemTemplate is { } template)
+    if (ChildContent is { } template)
     {
-        <ol @attributes=@ListAttributes>
+        <ul @attributes=@ListAttributes>
             @foreach (var item in items)
             {
                 <li>@template(item)</li>
             }
-        </ol>
+        </ul>
     }
     else
     {
-        <ol @attributes=@ListAttributes>
+        <ul @attributes=@ListAttributes>
             @foreach (var item in items)
             {
                 <li>@item</li>
             }
-        </ol>
+        </ul>
     }
 }
 
 @code {
 
-    [Parameter]
+    [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object> ListAttributes { get; set; } = new(StringComparer.OrdinalIgnoreCase);
 
     [Parameter]
-    public RenderFragment<TItem>? ItemTemplate { get; set; }
+    public RenderFragment<TItem>? ChildContent { get; set; }
 
     [Parameter]
     public IEnumerable<TItem>? Items { get; set; }

@@ -1,0 +1,73 @@
+﻿@typeparam TItem
+
+@if (Items is { } items)
+{
+    if (DT is { } term)
+    {
+        if (DD is { } defenition)
+        {
+            <dl>
+                @foreach (var item in items)
+                {
+                    <dt>@term(item)</dt>
+                    <dd>@defenition(item)</dd>
+                }
+            </dl>
+        }
+        else
+        {
+            <dl>
+                @foreach (var item in items)
+                {
+                    <dt>@term(item)</dt>
+                    <dd>@item</dd>
+                }
+            </dl>
+        }
+    }
+    else
+    {
+        if (DD is { } defenition)
+        {
+            <dl>
+                @foreach (var item in items)
+                {
+                    <dt>@item</dt>
+                    <dd>@defenition(item)</dd>
+                }
+            </dl>
+        }
+        else
+        {
+            <dl>
+                @foreach (var item in items)
+                {
+                    <dt>@item</dt>
+                    <dd>@item</dd>
+                }
+            </dl>
+        }
+    }
+}
+
+@code{
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> DlAttributes { get; set; } = new(StringComparer.OrdinalIgnoreCase);
+
+    [Parameter]
+    public Dictionary<string, object> DTAttributes { get; set; } = new(StringComparer.OrdinalIgnoreCase);
+
+    [Parameter]
+    public Dictionary<string, object> DDAttributes { get; set; } = new(StringComparer.OrdinalIgnoreCase);
+
+    [Parameter]
+    public RenderFragment<TItem>? DT { get; set; }
+
+    [Parameter]
+    public RenderFragment<TItem>? DD { get; set; }
+
+    [Parameter]
+    public IEnumerable<TItem>? Items { get; set; }
+
+}

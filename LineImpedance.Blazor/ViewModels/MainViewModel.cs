@@ -18,8 +18,21 @@ public class MainViewModel : ViewModel
            .Where(t => t.Description is { })
            .Select(t => new CalculatorViewModel(t.Type, t.Description!))
            .ToDictionary(c => c.TypeName);
+
+        //_ = UpdateTime();
     }
 
     public CalculatorViewModel? GetCalculatorByTypeName(string CalculatorTypeName) => 
         _Calculators.GetValueOrDefault(CalculatorTypeName);
+
+    //public DateTime Time => DateTime.Now;
+
+    //private async Task UpdateTime()
+    //{
+    //    while (true)
+    //    {
+    //        await Task.Delay(100);
+    //        OnPropertyChanged(nameof(Time));
+    //    }
+    //}
 }

@@ -2,8 +2,6 @@
 
 <p>Калькуляторы</p>
 
-<UlTemplate Items="@Model.Calculators">
-    <ItemTemplate>
-        <NavLink href="@($"/calculator/{context.TypeName}")">@context.Name</NavLink>
-    </ItemTemplate>
-</UlTemplate>
+<UL Items="@Model.Calculators" Context="calculator">
+    <NavLink href="@($"/calculator/{calculator.TypeName}")">@calculator.Name</NavLink>
+</UL>
